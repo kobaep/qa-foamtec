@@ -1,0 +1,9 @@
+# ignore case #
+
+.DS_Store
+.DS_Store?
+._
+target/*
+/target
+.idea/*
+*.zip
