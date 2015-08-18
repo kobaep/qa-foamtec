@@ -16,4 +16,8 @@
     <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
   </definition>
 
+  <definition name="foamtec" template="/WEB-INF/layouts/foamtec.jspx">
+    <put-attribute name="header" value="/WEB-INF/views/header-foamtec.jspx" />
+  </definition>
+
 </tiles-definitions>
