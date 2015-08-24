@@ -2,18 +2,183 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8" />
     <jsp:output omit-xml-declaration="yes" />
 
+    <spring:url var="dataTest" value="/main/dataJson" />
+
     <div class="row">
-        <div class="col-sm-12">
-            <table data-toggle="table" data-url="data1.json" data-cache="false" data-height="299">
-                <thead>
-                <tr>
-                    <th data-field="id">Item ID</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="price">Item Price</th>
-                </tr>
-                </thead>
-            </table>
+        <div class="col-sm-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">SALEs FA REQUEST</div>
+                <div class="panel-body">
+                    <div class="col-sm-12">
+                        <table data-toggle="table" data-url="${dataTest}" data-cache="false" data-height="200">
+                            <thead>
+                            <tr>
+                                <th data-field="no">#</th>
+                                <th data-field="faNo">FA No.</th>
+                                <th data-field="date">Date</th>
+                                <th data-field="time">Time</th>
+                                <th data-field="customer">Customer</th>
+                                <th data-field="partNo">Part No.</th>
+                                <th data-field="needDate">Need Date</th>
+                                <th data-field="requestBy">Request By</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">RESULT FROM CUSTOMER</div>
+                <div class="panel-body">
+                    <div class="col-sm-12">
+                        <table data-toggle="table" data-url="${dataTest}" data-cache="false" data-height="200">
+                            <thead>
+                            <tr>
+                                <th data-field="no">#</th>
+                                <th data-field="faNo">FA No.</th>
+                                <th data-field="customer">Customer</th>
+                                <th data-field="partNo">Part No.</th>
+                                <th data-field="submitDate">Submit Date</th>
+                                <th data-field="by">By</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">FA ON ENGINEER PROCESS</div>
+                        <div class="panel-body">
+                            <div class="col-sm-12">
+                                <table data-toggle="table" data-url="${dataTest}" data-cache="false" data-height="200">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="no">#</th>
+                                        <th data-field="faNo">FA No.</th>
+                                        <th data-field="customer">Customer</th>
+                                        <th data-field="partNo">Part No.</th>
+                                        <th data-field="needDate">Need Date</th>
+                                        <th data-field="commitDate">Commit Date</th>
+                                        <th data-field="agreeBy">Agree By</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">QC INSPECTION</div>
+                        <div class="panel-body">
+                            <div class="col-sm-12">
+                                <table data-toggle="table" data-url="${dataTest}" data-cache="false" data-height="200">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="no">#</th>
+                                        <th data-field="customer">Customer</th>
+                                        <th data-field="partNo">Part No</th>
+                                        <th data-field="needDate">Need Date</th>
+                                        <th data-field="submitDate">Submit Date</th>
+                                        <th data-field="time">Time</th>
+                                        <th data-field="reqType">Req-Type</th>
+                                        <th data-field="submitBy">Submit By</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">REJECT RESULT</div>
+                <div class="panel-body">
+                    <div class="col-sm-12">
+                        <table data-toggle="table" data-url="${dataTest}" data-cache="false" data-height="490">
+                            <thead>
+                            <tr>
+                                <th data-field="no">#</th>
+                                <th data-field="faNo">FA No.</th>
+                                <th data-field="customer">Customer</th>
+                                <th data-field="partNo">Part No.</th>
+                                <th data-field="type">Type</th>
+                                <th data-field="reject">Reject</th>
+                                <th data-field="by">By</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="col-sm-4">-->
+    <!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">Chat</div>-->
+    <!--<div class="panel-body">-->
+    <!--<div class="col-sm-12">-->
+    <!--<div class="form-group">-->
+    <!--<label for="comment">Message:</label>-->
+    <!--<textarea class="form-control" rows="6" id="textAreaMessage"><jsp:text/></textarea>-->
+    <!--</div>-->
+    <!--<div class="input-group">-->
+    <!--<input id="textMessage" type="text" class="form-control" placeholder="Message..."/>-->
+    <!--<span class="input-group-btn">-->
+    <!--<button class="btn btn-default" type="button" id="sendData">Send</button>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <script type="text/javascript">
+        <![CDATA[
+
+        $(document).ready(function() {
+
+//            var message = "";
+//
+//            var ws = new WebSocket("ws://192.168.0.21:8089/start");
+//            ws.onopen = function (){
+//                $("#textAreaMessage").val("server connect ... \n");
+//                ws.send(JSON.stringify({"Name":"Apichat", "Message":"q"}));
+//            };
+//            ws.onclose = function (){
+//                message += message + "colse ... \n";
+//                $("#textAreaMessage").val(message);
+//            };
+//            ws.onerror = function (){
+//                message += message + "error ... \n";
+//                $("#textAreaMessage").val(message);
+//            };
+//            ws.onmessage = function(msg) {
+//                var dataReceive = JSON.parse(msg.data);
+//                message = message + dataReceive.messageBack + "\n";
+//                $("#textAreaMessage").val(message);
+//            };
+//
+//            $("#sendData").click(function(){
+//                var textMessage = $("#textMessage").val();
+//                ws.send(JSON.stringify({"Name":"Apichat", "Message":textMessage}));
+//                $("#textMessage").val("");
+//            });
+
+        });
+
+        ]]>
+    </script>
 
 </div>
