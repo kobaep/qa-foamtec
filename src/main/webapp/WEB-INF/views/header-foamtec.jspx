@@ -3,7 +3,7 @@
     <jsp:output omit-xml-declaration="yes" />
 
     <spring:url var="home" value="/" />
-    <spring:url var="request" value="/" />
+    <spring:url var="testCreate" value="/testCreate" />
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -22,7 +22,7 @@
                         <a href="#" class="dropdown-toggle capitalize" data-toggle="dropdown">FA</a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="${request}">Request</a>
+                                <a href="${testCreate}">Request</a>
                             </li>
                         </ul>
                     </li>
