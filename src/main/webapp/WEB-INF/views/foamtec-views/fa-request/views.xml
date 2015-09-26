@@ -3,7 +3,7 @@
 <tiles-definitions>
 
     <definition extends="foamtec" name="fa-create">
-        <put-attribute name="body" value="/WEB-INF/views/foamtec-views/fa-request/fa-create.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/foamtec-views/fa-request/create.jspx"/>
     </definition>
 
 </tiles-definitions>

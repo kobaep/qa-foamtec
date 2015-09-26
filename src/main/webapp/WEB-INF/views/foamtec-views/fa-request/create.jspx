@@ -1,0 +1,372 @@
+<div xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+     xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:form="http://www.springframework.org/tags/form" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:fn="http://java.sun.com/jsp/jstl/functions" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8" />
+    <jsp:output omit-xml-declaration="yes" />
+
+    <jsp:useBean class="java.util.Date" id="now" scope="request" />
+    <fmt:formatDate pattern="dd/MM/yyyy" value="${now}" var="default" />
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li>FA REQUEST</li>
+                <li class="active">create</li>
+            </ol>
+            <div class="col-sm-7">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="productGroupId">Product Group :</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="productGroupId">
+                                <option value="Electronics">Electronics</option>
+                                <option value="HDD">HDD</option>
+                                <option value="Consumer">Consumer</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Cusmetic">Cusmetic</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="apqpId">APQA Requirement :</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="apqpId">
+                                <option value="NO">NO</option>
+                                <option value="YES">YES</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="qwId">Quataion Worksheet No. :</label>
+                        <div class="col-sm-8">
+                            <input id="qwId" type="text" class="form-control" autocomplete="off" placeholder="Quataion Worksheet No."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="needDateId">Need Date :</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input id="needDateId" class="form-control" autocomplete="off" placeholder="need date" value="${default}"  disabled="true"/>
+                            <span class="input-group-btn">
+                                <button id="btnNeedDateId" class="btn btn-default" type="button"><span class="glyphicon glyphicon-calendar"><jsp:text/></span></button>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="customerId">Customer :</label>
+                        <div class="col-sm-8">
+                            <input id="customerId" type="text" class="form-control" autocomplete="off" placeholder="Customer."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="projectOwnerId">Project Owner :</label>
+                        <div class="col-sm-8">
+                            <input id="projectOwnerId" type="text" class="form-control" autocomplete="off" placeholder="Project Owner."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="partNoId">Part No. :</label>
+                        <div class="col-sm-8">
+                            <input id="partNoId"  type="text" class="form-control" autocomplete="off" placeholder="Part No."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="revId">Rev. :</label>
+                        <div class="col-sm-8">
+                            <input id="revId"  type="text" class="form-control" autocomplete="off" placeholder="Rev."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="partNameId">Part Name :</label>
+                        <div class="col-sm-8">
+                            <input id="partNameId"  type="text" class="form-control" autocomplete="off" placeholder="Part Name."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat1Id">Material 1 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat1Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 1"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat2Id">Material 2 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat2Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 2"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat3Id">Material 3 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat3Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 3"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat4Id">Material 4 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat4Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 4"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat5Id">Material 5 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat5Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 5"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="mat6Id">Material 6 :</label>
+                        <div class="col-sm-8">
+                            <input id="mat6Id"  type="text" class="form-control" autocomplete="off" placeholder="Material 6"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="documentId">Document Request :</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="documentId">
+                                <option value="No Need Data">No Need Data</option>
+                                <option value="Inspection Data Only">Inspection Data Only</option>
+                                <option value="Full FA Submit For Approve">Full FA Submit For Approve</option>
+                                <option value="PPAP">PPAP</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-5">
+                <blockquote class="blockquote">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div ng-init="faApproveSwitch=false">
+                                        <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="faApproveSwitch" id="faApproveId"/>FA APPROVE</label>
+                                        <div ng-show="faApproveSwitch">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label" for="qty1Id">Qty :</label>
+                                                <div class="col-sm-8">
+                                                    <input id="qty1Id"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                </div>
+                                            </div>
+                                            <div ng-init="faApproveToolingSwitch=true">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" for="tooling1Id">Tooling :</label>
+                                                    <label class="checkbox-inline col-sm-4"><input type="checkbox" ng-model="faApproveToolingSwitch" id="tooling1Id"/>need tooling</label>
+                                                </div>
+                                                <div ng-show="!faApproveToolingSwitch">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label" for="other1Id">Other :</label>
+                                                        <div class="col-sm-8">
+                                                            <input id="other1Id"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div ng-init="faForSellSwitch=false">
+                                        <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="faForSellSwitch" id="faForSellId"/>FA For Sell</label>
+                                        <div ng-show="faForSellSwitch">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label" for="qty2Id">Qty :</label>
+                                                <div class="col-sm-8">
+                                                    <input id="qty2Id"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                </div>
+                                            </div>
+                                            <div ng-init="faForSellToolingSwitch=true">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" for="tooling2Id">Tooling :</label>
+                                                    <label class="checkbox-inline col-sm-4"><input type="checkbox" ng-model="faForSellToolingSwitch" id="tooling2Id"/>need tooling</label>
+                                                </div>
+                                                <div ng-show="!faForSellToolingSwitch">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label" for="other2Id">Other :</label>
+                                                        <div class="col-sm-8">
+                                                            <input id="other2Id"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div ng-init="sampleForTestSwitch=false">
+                                        <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="sampleForTestSwitch" id="sampleForTestId"/>Sample For Test</label>
+                                        <div ng-show="sampleForTestSwitch">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label" for="qty3Id">Qty :</label>
+                                                <div class="col-sm-8">
+                                                    <input id="qty3Id"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                </div>
+                                            </div>
+                                            <div ng-init="sampleForTestToolingSwitch=true">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" for="tooling3Id">Tooling :</label>
+                                                    <label class="checkbox-inline col-sm-4"><input type="checkbox" ng-model="sampleForTestToolingSwitch" id="tooling3Id"/>need tooling</label>
+                                                </div>
+                                                <div ng-show="!sampleForTestToolingSwitch">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label" for="other3Id">Other :</label>
+                                                        <div class="col-sm-8">
+                                                            <input id="other3Id"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div ng-init="sampleForPccSwitch=false">
+                                        <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="sampleForPccSwitch" id="sampleForPccId"/>Sample For PCC</label>
+                                        <div ng-show="sampleForPccSwitch">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label" for="qty4Id">Qty :</label>
+                                                <div class="col-sm-8">
+                                                    <input id="qty4Id"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                </div>
+                                            </div>
+                                            <div ng-init="sampleForPccToolingSwitch=true">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" for="tooling4Id">Tooling :</label>
+                                                    <label class="checkbox-inline col-sm-4"><input type="checkbox" ng-model="sampleForPccToolingSwitch" id="tooling4Id"/>need tooling</label>
+                                                </div>
+                                                <div ng-show="!sampleForPccToolingSwitch">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label" for="other4Id">Other :</label>
+                                                        <div class="col-sm-8">
+                                                            <input id="other4Id"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div ng-init="otherSwitch=false">
+                                        <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="otherSwitch" id="faOhterId"/>Other</label>
+                                        <div ng-show="otherSwitch">
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-4 col-sm-8">
+                                                    <input id="otherTextId"  type="text" class="form-control" autocomplete="off" placeholder="Other text"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label" for="qty5Id">Qty :</label>
+                                                <div class="col-sm-8">
+                                                    <input id="qty5Id"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                </div>
+                                            </div>
+                                            <div ng-init="sampleForPccToolingSwitch=true">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" for="tooling5Id">Tooling :</label>
+                                                    <label class="checkbox-inline col-sm-4"><input type="checkbox" ng-model="sampleForPccToolingSwitch" id="tooling5Id"/>need tooling</label>
+                                                </div>
+                                                <div ng-show="!sampleForPccToolingSwitch">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4 control-label" for="other5Id">Other :</label>
+                                                        <div class="col-sm-8">
+                                                            <input id="other5Id"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button class="btn btn-info btn-block" id="saveId">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        <![CDATA[
+
+        $(document).ready(function() {
+
+            $("#needDateId").datepicker({
+                format: "dd/mm/yyyy"
+            });
+
+            $("#btnNeedDateId").click(function() {
+                $("#needDateId").datepicker("show").on("changeDate", function(ev){
+                    $(this).datepicker("hide");
+                });
+            });
+
+            $("#saveId").click(function(){
+                var data = {
+                    productGroup : $("#productGroupId").val(),
+                    apqp : $("#apqpId").val(),
+                    qw : $("#qwId").val(),
+                    needDate : $("#needDateId").val(),
+                    customer : $("#customerId").val(),
+                    projectOwner : $("#projectOwnerId").val(),
+                    partNo : $("#partNoId").val(),
+                    rev : $("#revId").val(),
+                    partName : $("#partNameId").val(),
+                    mat1 : $("#mat1Id").val(),
+                    mat2 : $("#mat2Id").val(),
+                    mat3 : $("#mat3Id").val(),
+                    mat4 : $("#mat4Id").val(),
+                    mat5 : $("#mat5Id").val(),
+                    mat6 : $("#mat6Id").val(),
+                    document : $("#documentId").val(),
+                    faApprove : $("#faApproveId").is(":checked"),
+                    qty1 : $("#qty1Id").val(),
+                    tooling1 :$("#tooling1Id").is(":checked"),
+                    other1 : $("#other1Id").val(),
+                    faForSell :$("#faForSellId").is(":checked"),
+                    qty2 : $("#qty2Id").val(),
+                    tooling2 :$("#tooling2Id").is(":checked"),
+                    other2 : $("#other2Id").val(),
+                    sampleForTest : $("#sampleForTestId").is(":checked"),
+                    qty3 : $("#qty3Id").val(),
+                    tooling3 :$("#tooling3Id").is(":checked"),
+                    other3 : $("#other3Id").val(),
+                    sampleForPcc : $("#sampleForPccId").is(":checked"),
+                    qty4 : $("#qty4Id").val(),
+                    tooling4 :$("#tooling4Id").is(":checked"),
+                    other4 : $("#other4Id").val(),
+                    faOhter : $("#faOhterId").is(":checked"),
+                    otherText : $("#otherTextId").val(),
+                    qty5 : $("#qty5Id").val(),
+                    tooling5 :$("#tooling5Id").is(":checked"),
+                    other5 : $("#other5Id").val()
+                }
+                console.log(data);
+            });
+
+        });
+
+        ]]>
+    </script>
+
+</div>
