@@ -19,11 +19,7 @@
                             <div class="col-sm-12">
                                 <label class="col-sm-2 control-label">Date :</label>
                                 <div class="col-sm-2">
-                                    <p class="form-control-static text-overflow-newline">10/08/2015</p>
-                                </div>
-                                <label class="col-sm-offset-4 col-sm-2 control-label">FA NO.:</label>
-                                <div class="col-sm-2">
-                                    <p class="form-control-static text-overflow-newline">FA2408150001</p>
+                                    <p class="form-control-static text-overflow-newline">${default}</p>
                                 </div>
                             </div>
                         </div>
@@ -35,22 +31,22 @@
                                         <div class="radio">
                                             <div class="row">
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>Electronics</label>
+                                                    <label><input type="radio" name="productGroup" value="Electronics"/>Electronics</label>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>HDD</label>
+                                                    <label><input type="radio" name="productGroup" value="HDD"/>HDD</label>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>Consumer</label>
+                                                    <label><input type="radio" name="productGroup" value="Consumer"/>Consumer</label>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>Automotive</label>
+                                                    <label><input type="radio" name="productGroup" value="Automotive"/>Automotive</label>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>Cosmetic</label>
+                                                    <label><input type="radio" name="productGroup" value="Cosmetic"/>Cosmetic</label>
                                                 </div>
                                                 <div class="col-sm-4">
-                                                    <label><input type="radio" name="productGroup"/>General</label>
+                                                    <label><input type="radio" name="productGroup" value="General" checked="checked"/>General</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -63,10 +59,10 @@
                                         <label class="col-sm-4 control-label">APQP REQUIREMENT</label>
                                         <div class="radio">
                                             <div class="col-sm-2">
-                                                <label><input type="radio" name="apqpRequirement"/>Yes</label>
+                                                <label><input type="radio" name="apqpRequirement" value="Yes" checked="checked"/>Yes</label>
                                             </div>
                                             <div class="col-sm-2">
-                                                <label><input type="radio" name="apqpRequirement"/>No</label>
+                                                <label><input type="radio" name="apqpRequirement" value="No"/>No</label>
                                             </div>
                                         </div>
                                     </div>
@@ -130,60 +126,30 @@
                                     <div class="col-sm-12">
                                         <div class="col-sm-2">
                                             <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 1</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
                                                 <input id="material1"  type="text" class="form-control" autocomplete="off" placeholder="Material 1"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
-                                            <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 2</label>
-                                                </div>
-                                            </div>
                                             <div class="row">
                                                 <input id="material2"  type="text" class="form-control" autocomplete="off" placeholder="Material 2"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 3</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
                                                 <input id="material3"  type="text" class="form-control" autocomplete="off" placeholder="Material 3"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
-                                            <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 4</label>
-                                                </div>
-                                            </div>
                                             <div class="row">
                                                 <input id="material4"  type="text" class="form-control" autocomplete="off" placeholder="Material 4"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 5</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
                                                 <input id="material5"  type="text" class="form-control" autocomplete="off" placeholder="Material 5"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
-                                            <div class="row">
-                                                <div class="checkbox">
-                                                    <label class="control-label"><input type="checkbox" value=""/>Material 6</label>
-                                                </div>
-                                            </div>
                                             <div class="row">
                                                 <input id="material6"  type="text" class="form-control" autocomplete="off" placeholder="Material 6"/>
                                             </div>
@@ -198,90 +164,116 @@
                                     <label class="col-sm-2 control-label">TYPE OF REQUEST</label>
                                     <div class="col-sm-10">
                                         <div class="row">
-                                            <div class="col-sm-12">
-                                                <label class="checkbox-inline col-sm-2"><input type="checkbox" value=""/>FA APPROVE</label>
-                                                <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                            <div ng-init="faApproveSwitch=false">
+                                                <div class="col-sm-12">
+                                                    <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="faApproveSwitch" id="faApproveId"/>FA APPROVE</label>
+                                                    <div ng-show="faApproveSwitch">
+                                                        <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
+                                                        <div class="col-sm-2">
+                                                            <input id="qtyFaApproveId"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label">PCs</label>
+                                                        <div ng-init="toolingSwitch1=true">
+                                                            <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="toolingSwitch1" id="tooling1Id"/>Need Tooling</label>
+                                                            <div ng-show="!toolingSwitch1">
+                                                                <div class="col-sm-4">
+                                                                    <input id="faApproveOtherId"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Tooling</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Other</label>
-                                                <div class="col-sm-3">
-                                                    <input id="qtyFaApproveOther"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div ng-init="faForsellSwitch1=false">
+                                                <div class="col-sm-12">
+                                                    <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="faForsellSwitch1" id="faForSellId"/>FA For Sell</label>
+                                                    <div ng-show="faForsellSwitch1">
+                                                        <label class="col-sm-1 control-label" for="qtyFaForSellId">QTY</label>
+                                                        <div class="col-sm-2">
+                                                            <input id="qtyFaForSellId"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label">PCs</label>
+                                                        <div ng-init="faForsellSwitch2=true">
+                                                            <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="faForsellSwitch2" id="tooling2Id"/>Need Tooling</label>
+                                                            <div ng-show="!faForsellSwitch2">
+                                                                <div class="col-sm-4">
+                                                                    <input id="faForSellOtherId"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div ng-init="sampleForTestSwitch1=false">
+                                                <div class="col-sm-12">
+                                                    <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="sampleForTestSwitch1" id="sampleForTestId"/>Sample For Test</label>
+                                                    <div ng-show="sampleForTestSwitch1">
+                                                        <label class="col-sm-1 control-label" for="qtySampleForTestId">QTY</label>
+                                                        <div class="col-sm-2">
+                                                            <input id="qtySampleForTestId"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label">PCs</label>
+                                                        <div ng-init="sampleForTestSwitch2=true">
+                                                            <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="sampleForTestSwitch2" id="tooling3Id"/>Need Tooling</label>
+                                                            <div ng-show="!sampleForTestSwitch2">
+                                                                <div class="col-sm-4">
+                                                                    <input id="sampleForTestOtherId"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div ng-init="faForPcSwitch1=false">
+                                                <div class="col-sm-12">
+                                                    <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="faForPcSwitch1" id="faForPccId"/>FA For PCC</label>
+                                                    <div ng-show="faForPcSwitch1">
+                                                        <label class="col-sm-1 control-label" for="qtyFaForPccId">QTY</label>
+                                                        <div class="col-sm-2">
+                                                            <input id="qtyFaForPccId"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label">PCs</label>
+                                                        <div ng-init="faForPcSwitch2=true">
+                                                            <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="faForPcSwitch2" id="tooling4Id"/>Need Tooling</label>
+                                                            <div ng-show="!faForPcSwitch2">
+                                                                <div class="col-sm-4">
+                                                                    <input id="faForPccOtherId"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <label class="checkbox-inline col-sm-2"><input type="checkbox" value=""/>FA For Sell</label>
-                                                <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                <div ng-init="otherSwitch1=false">
+                                                    <label class="checkbox-inline col-sm-12"><input type="checkbox" ng-model="otherSwitch1" id="otherOtherId"/>OTHER</label>
+                                                    <div ng-show="otherSwitch1">
+                                                        <div class="col-sm-2">
+                                                            <input id="otherOtherTxtId"  type="text" class="form-control" autocomplete="off" placeholder="OTHER"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label" for="qtyOtherOtherId">QTY</label>
+                                                        <div class="col-sm-2">
+                                                            <input id="qtyOtherOtherId"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
+                                                        </div>
+                                                        <label class="col-sm-1 control-label">PCs</label>
+                                                        <div ng-init="otherSwitch2=true">
+                                                            <label class="checkbox-inline col-sm-2"><input type="checkbox" ng-model="otherSwitch2" id="tooling5Id"/>Need Tooling</label>
+                                                            <div ng-show="!otherSwitch2">
+                                                                <div class="col-sm-4">
+                                                                    <input id="otherOtherId"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Tooling</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Other</label>
-                                                <div class="col-sm-3">
-                                                    <input id="qtyFaApproveOther"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label class="checkbox-inline col-sm-2"><input type="checkbox" value=""/>Sample For Test</label>
-                                                <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
-                                                </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Tooling</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Other</label>
-                                                <div class="col-sm-3">
-                                                    <input id="qtyFaApproveOther"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label class="checkbox-inline col-sm-2"><input type="checkbox" value=""/>FA For PCC</label>
-                                                <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
-                                                </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Tooling</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Other</label>
-                                                <div class="col-sm-3">
-                                                    <input id="qtyFaApproveOther"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label class="checkbox-inline col-sm-12"><input type="checkbox" value=""/>OTHER</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="OTHER"/>
-                                                </div>
-                                                <label class="col-sm-1 control-label" for="qtyFaApprove">QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
-                                                </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Tooling</label>
-                                                <label class="radio-inline col-sm-1"><input type="radio" name="tooling1"/>Other</label>
-                                                <div class="col-sm-3">
-                                                    <input id="qtyFaApproveOther"  type="text" class="form-control" autocomplete="off" placeholder="Other"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <label class="col-sm-3 control-label" for="qtyFaApprove">TOTAL QTY</label>
-                                                <div class="col-sm-2">
-                                                    <input id="qtyFaApprove"  type="text" class="form-control" autocomplete="off" placeholder="QTY"/>
-                                                </div>
-                                                <label class="col-sm-1 control-label">PCs</label>
                                             </div>
                                         </div>
                                     </div>
@@ -294,16 +286,16 @@
                                     <label class="col-sm-3 control-label">DOCUMENT REQUEST</label>
                                     <div class="radio">
                                         <div class="col-sm-2">
-                                            <label><input type="radio" name="docType"/>No Need Data</label>
+                                            <label><input type="radio" name="docType" value="No Need Data" checked="checked"/>No Need Data</label>
                                         </div>
                                         <div class="col-sm-2">
-                                            <label><input type="radio" name="docType"/>Inspection Data Only</label>
+                                            <label><input type="radio" name="docType" value="Inspection Data Only"/>Inspection Data Only</label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label><input type="radio" name="docType"/>Full FA Submit For Approve</label>
+                                            <label><input type="radio" name="docType" value="Full FA Submit For Approve"/>Full FA Submit For Approve</label>
                                         </div>
                                         <div class="col-sm-2">
-                                            <label><input type="radio" name="docType"/>PPAP</label>
+                                            <label><input type="radio" name="docType" value="PPAP"/>PPAP</label>
                                         </div>
                                     </div>
                                 </div>
@@ -342,7 +334,49 @@
                 });
             });
 
-        });
+            $("#proceed").click(function(){
+                var data = {
+                    productGroup : $("input:radio[name=productGroup]:checked").val(),
+                    apqp : $("input:radio[name=apqpRequirement]:checked").val(),
+                    qw : $("#qwNo").val(),
+                    needDate : $("#needDate").val(),
+                    customer : $("#customer").val(),
+                    projectOwner : $("#projectOwner").val(),
+                    partNo : $("#partNo").val(),
+                    rev : $("#rev").val(),
+                    partName : $("#partName").val(),
+                    mat1 : "na_" + $("#material1").val(),
+                    mat2 : "na_" + $("#material2").val(),
+                    mat3 : "na_" + $("#material3").val(),
+                    mat4 : "na_" + $("#material4").val(),
+                    mat5 : "na_" + $("#material5").val(),
+                    mat6 : "na_" + $("#material6").val(),
+                    ckFaApprove : $("#faApproveId").is(":checked"),
+                    qtyFaApprove : "na_" + $("#qtyFaApproveId").val(),
+                    ckTooling1 : $("#tooling1Id").is(":checked"),
+                    otherTooling1 : "na_" + $("#faApproveOtherId").val(),
+                    ckFaForSellId : $("#faForSellId").is(":checked"),
+                    qtyFaForSell : "na_" + $("#qtyFaForSellId").val(),
+                    ckTooling2 : $("#tooling2Id").is(":checked"),
+                    otherTooling2 : "na_" + $("#faForSellOtherId").val(),
+                    ckSampleForTest : $("#sampleForTestId").is(":checked"),
+                    qtySampleForTest : "na_" + $("#qtySampleForTestId").val(),
+                    ckTooling3 : $("#tooling3Id").is(":checked"),
+                    otherTooling3 : "na_" + $("#sampleForTestOtherId").val(),
+                    ckFaForPcc : $("#faForPccId").is(":checked"),
+                    qtyFaForPcc : "na_" + $("#qtyFaForPccId").val(),
+                    ckTooling4 : $("#tooling4Id").is(":checked"),
+                    otherTooling4 : "na_" + $("#faForPccOtherId").val(),
+                    ckOtherOther : $("#otherOtherId").is(":checked"),
+                    otherOtherTxt : "na_" + $("#otherOtherTxtId").val(),
+                    qtyOtherOther : "na_" + $("#qtyOtherOtherId").val(),
+                    ckTooling5 : $("#tooling5Id").is(":checked"),
+                    otherTooling5 : "na_" + $("#otherOtherId").val(),
+                    document : $("input:radio[name=docType]:checked").val()
+                }
+                console.log(data);
+            });
+        });otherOtherId
 
         ]]>
     </script>
